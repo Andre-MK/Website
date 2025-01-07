@@ -1,0 +1,476 @@
+html{
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(12, 26, 79, 1);
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    /*background-size: 120px 120px;*/ 
+    background-repeat: repeat;
+    background-position: 0 0;
+    transition: background-image 0.5s ease-in-out;
+    z-index: 0; 
+    animation: moveBackgroundReverse 10s linear infinite; 
+    filter: invert(1) brightness(2);
+
+
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; 
+    /*background-size: inherit;*/
+    background-repeat: inherit;
+    background-position: 0 40px; 
+    animation: moveBackgroundReverse 3s ease-in-out infinite; 
+    z-index: -1; 
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); 
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes moveBackgroundReverse {
+    0% {
+        background-position: 0 0px; /* Top-left corner for alternate rows */
+    }
+    50% {
+        background-position: 20px 0px; /* Move diagonally to the right */
+    }
+    100% {
+        background-position: 0 0px;
+    }
+}
+
+.hero-text-container {
+    background: rgba(255, 255, 255, 1);
+    padding: 1.5rem; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 1; 
+    position: relative; 
+    /*mix-blend-mode: difference;*/
+}
+
+.hero-background-container ::after {
+    mix-blend-mode: difference;
+}
+
+/*
+
+@media (max-width: 768px) {
+    .hero-background {
+        background-size: 60px 60px;
+    }
+    .hero-text-container {
+        padding: 1rem;
+        max-width: 90%; 
+    }
+}
+@media (max-width: 480px) {
+    .hero-background {
+        background-size: 40px 40px;
+    }
+}*/
+
+
+h1, h2 {
+    color: #333;
+    z-index: 1;
+    position: relative;
+    margin: 3rem;
+}
+
+h1{
+    font-size: 3rem;
+    color: #333;
+}
+
+h2{
+    font: 3rem;
+    color: #333;
+}
+
+#dynamic-text {
+    color: navy;
+    font-weight: bold;
+}
+
+
+/*
+#dynamic-image-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#dynamic-image {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}*/
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in forwards; /* Fade-in lasts 0.5s */
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in forwards; /* Fade-out lasts 0.5s */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.about {
+    position: relative;
+    text-align: center;
+    padding: 3rem;
+    height: 100vh;
+}
+
+.about h2 {
+    color: aliceblue;
+    font-size: 3rem;
+
+}
+
+.about p {
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin: 10rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.connect {
+    position: relative;
+    text-align: center;
+    padding: 3rem;
+}
+
+.connect p {
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1rem;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the button circular */
+    background-color: white; /* Circle color */
+    color: black; /* Icon color */
+    text-decoration: none;
+    font-size: 1.5rem; /* Icon size */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.social-button:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    background-color: #ddd; /* Change color on hover */
+}
+
+.social-button i {
+    pointer-events: none; /* Prevent the icon from interfering with clicks */
+}
+
+/* Individual colors for each social button */
+.instagram {
+    color: #E4405F;
+}
+
+.github {
+    color: #333;
+}
+
+.linkedin {
+    color: #0077B5;
+}
+
+
+.about-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Makes it circular */
+    border: none;
+    background-color: white; /* Button background */
+    color: black; /* Button text */
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 11;
+}
+
+.about-button:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    background-color: rgba(12, 26, 79, 1); /* Matches the background color */
+    color: white;
+}
+
+
+/*
+.arrow {
+    position: absolute;
+    width: 20px; 
+    height: 60px; 
+    background-color: transparent;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1; 
+}
+
+.arrow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 8px; 
+    height: 60px;
+    background-color: red;
+    transform: translateX(-50%);
+    border-radius: 4px; 
+    transition: height 1s ease-in-out; 
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    top: 60px; 
+    left: 50%;
+    width: 20px; 
+    height: 20px; 
+    background-color: red; 
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
+    transform: translateX(-50%) rotate(180deg);
+    transition: top 1s ease-in-out; 
+}
+
+
+
+.arrow.animate {
+    opacity: 1;
+    animation: none;
+}
+
+.arrow.animate::before {
+    height: calc(100vh - 120px); 
+}
+
+.arrow.animate::after {
+    top: calc(100vh - 60px); 
+}
+
+@keyframes shootArrow {
+    0% {
+        height: 60px;
+        transform: translate(-50%, -50%); 
+        opacity: 1; 
+    }
+    100% {
+        height: calc(100vh - 120px); 
+        transform: translate(-50%, 0);
+        opacity: 0; 
+    }
+}*/
+/*.arrow-down {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #4CAF50; 
+    opacity: 0; 
+    height: 0; 
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out; 
+}*/
+/*  
+.center-line-container {
+    position: absolute; 
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 20px; 
+    height: 100px;
+    overflow: visible;
+    z-index: 10;
+}
+
+svg{
+    width: 20px;
+    height: 20px;
+    transition:height 2s ease;
+    overflow: visible;
+    color:  rgba(12, 26, 79, 1);
+  }
+  svg:hover{
+    height: calc(45vh);
+  }
+
+  line{
+    stroke: white;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }*/
+
+  .center-line-container {
+    position: absolute; 
+    margin-top: 1rem;
+    left: 50%;
+    transform: translate(-50%); /* Center horizontally */
+    width: 20px; /* Fixed width for the line */
+    height: 100vh; /* Initially hidden */
+    overflow: hidden; /* Ensure the line stays contained */
+    z-index: 5;
+    pointer-events: none;
+}
+
+svg {
+    width: 20px; /* Fixed width for the line */
+    height: 100%; /* Initially hidden */
+    overflow: visible; /* Allow the line to extend dynamically */
+}
+
+
+line {
+    stroke: white; /* Line color */
+    stroke-width: 8; /* Line thickness */
+    stroke-linecap: round; /* Rounded edges for the line */
+    transition: opacity 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 4px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.3s;
+    stroke-linecap: round;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 200%;
+    background-color: rgba(12, 26, 79, 1);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 9;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 20px 0;
+}
+
+.nav-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-menu.open {
+    left: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}

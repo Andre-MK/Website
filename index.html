@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMK</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-text-container">
+            <h1>Hi! I'm </br> Andre Morales Kalamar</h1>
+            <h2>I am interested in <span id="dynamic-text"></span></h2>
+            <button class="about-button" onclick="extendLine()">About me</button>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Photo Portfolio</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </section>    
+    <div class="center-line-container">
+        <svg id="center-line" xmlns="http://www.w3.org/2000/svg" width="20" height="100">
+            <line x1="50%" y1="0" x2="50%" y2="0" stroke-width="15" marker-end="url(#m)" stroke="black" />
+        </svg>
+    </div>
+    <script src="script.js"></script>
+
+    <section class="about">
+        <h2>About me</h2>
+        <p>Hi everyone, I'm Andre from Slovenia.</br>
+            I spent a year studying at the Faculty of Computer and Information Sciences</br>
+            before transitioning to the Faculty of Natural Sciences and Engineering, where</br>
+            I'm now pursuing a degree in Graphic and Interactive Communications</br>
+            </br>
+            I'm passionate about creating applications, games, and websites, with a keen interest in both front-end and back-end development.</br>
+            I also love photography and enjoy greatly in designing intuitive and visually appealing user interfaces.
+        </p>
+        <div class="connect">
+            <p>Feel free to connect with me</p>
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/andre___mk/" target="_blank" class="social-button instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.github.com/Andre-MK" target="_blank" class="social-button github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://si.linkedin.com/in/andre-morales-kalamar-2a3110256" target="_blank" class="social-button linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
